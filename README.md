@@ -1,4 +1,4 @@
-# wp-react-starter
+# Wordpress React WebComponents
 A react psuedo web-component based React Compiler for Wordpress
 
 

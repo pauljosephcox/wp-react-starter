@@ -1,3 +1,3 @@
 <div class="example-shortcode">
-    <HelloWorld name="<?php echo $attr['name']; ?>"></HelloWorld>
+    <HelloWorld name="<?php echo (!empty($attr['name'])) ? $attr['name'] : ''; ?>"></HelloWorld>
 </div>

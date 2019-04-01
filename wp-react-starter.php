@@ -2,7 +2,7 @@
 /**
  *
  * @wordpress-plugin
- * Plugin Name: WP React Starter
+ * Plugin Name: WP Web Components
  * Description: A Psuedo Web Component like React Boilerplate
  * Author: Paul Joseph Cox
  * Version: 1.0
@@ -25,12 +25,11 @@ class WP_WebComponents {
 		$this->slug    = 'wp-react-starter';
     	$this->version = '0.0.1';
 
-		// Load
-		add_action('parse_request', array($this , 'endpoints'));
+		// Include Javascript
 		add_action('wp_enqueue_scripts', array($this, 'scripts'));
 
 		// Shortcode Implementation
-        add_shortcode('component_hello_world', array($this, 'shortcode_component_hello_world'));
+        add_shortcode('hello_world', array($this, 'shortcode_component_hello_world'));
 
 	}
 
@@ -44,7 +43,7 @@ class WP_WebComponents {
 
 	public function scripts(){
 
-		wp_enqueue_script($this->slug.'.webcomponents.js', $this->url.'static/js/main.js', array(), $this->version, true);
+		wp_enqueue_script($this->slug.'.webcomponents.js', $this->url.'react/build/static/js/main.js', array(), $this->version, true);
 
 	}
 
@@ -64,6 +63,6 @@ class WP_WebComponents {
 
 }
 
-$wp_react_starter = new WebComponents();
+$wp_web_components = new WP_WebComponents();
 
 ?>
