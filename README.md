@@ -13,6 +13,18 @@ npm install
 1. Open react/public/index.html
 2. Add your CSS include in the head to your active theme. (yes this is manual for now)
 
+## Create New Components
+In addition to creating components in React we have to make them available to the ReactLauncher.
+1. Open index.js
+2. Import your component.
+3. Add your component to the Launcher.
+
+```
+ReactLauncher([
+    {tagName: 'HelloWorld', component: HelloWorld},
+]);
+
+```
 
 ## Develop
 ```
